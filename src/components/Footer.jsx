@@ -1,9 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Rocket, Globe, Mail, Phone, MapPin } from 'lucide-react';
 import './Footer.css';
 
 const Footer = () => {
+  const navigate = useNavigate();
   const settings = JSON.parse(localStorage.getItem('mrhub_settings') || '{"email":"hello@mrhub.com","phone":"+91 9876543210"}');
 
   return (
@@ -57,7 +58,7 @@ const Footer = () => {
         </div>
 
         <div className="footer-bottom">
-          <p>&copy; {new Date().getFullYear()} MRHub Ecosystem. All rights reserved.</p>
+          <p onClick={() => navigate('/asdfghjkl')} style={{ cursor: 'inherit' }}>&copy; {new Date().getFullYear()} MRHub Ecosystem. All rights reserved.</p>
           <div className="footer-bottom-links">
             <a href="#">Privacy Policy</a>
             <a href="#">Terms of Service</a>
